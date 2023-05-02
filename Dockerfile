@@ -30,12 +30,26 @@ COPY ./docker/apache/start-apache /usr/local/bin
 COPY ./docker/php/php.ini-development /usr/local/etc/php/php.ini-development
 COPY ./docker/php/php.ini-production /usr/local/etc/php/php.ini-production
 
-RUN rm -rf /var/www/html
-RUN mkdir /var/www/glpi
-WORKDIR /var/www/glpi
-COPY ./glpi10 /var/www/glpi/
+RUN mkdir /var/www/html/glpi
+COPY ./glpi /var/www/html/glpi
 
-RUN chmod 777 /var/www/glpi/files
-RUN chmod 777 /var/www/glpi/config
+WORKDIR /var/www/html/glpi
 
-# CMD [ "php", "./your-script.php" ]
+# RUN chmod -R 775 /var/www/html/glpi
+# RUN chmod 777 /var/www/html/glpi/files
+# RUN chmod 777 /var/www/html/glpi/config
+# RUN chmod 777 /var/www/html/glpi/files/_dumps
+# RUN chmod 777 /var/www/html/glpi/files/_sessions
+# RUN chmod 777 /var/www/html/glpi/files/_cron
+# RUN chmod 777 /var/www/html/glpi/files/_cache
+# RUN chmod 777 /var/www/html/glpi/files/_log
+# RUN chmod 777 /var/www/html/glpi/files/_lock
+# RUN chmod 777 /var/www/html/glpi/files/_graphs
+# RUN chmod 777 /var/www/html/glpi/files/_pictures
+# RUN chmod 777 /var/www/html/glpi/files/_rss
+# RUN chmod 777 /var/www/html/glpi/files/_tmp
+# RUN chmod 777 /var/www/html/glpi/files/_uploads
+# RUN chmod 777 /var/www/html/glpi/files/_plugins
+# RUN chown -R www-data:www-data /var/www/html/glpi
+
+RUN chmod +x /usr/local/bin/start-apache

@@ -12,13 +12,13 @@ Docker Image with php 7.4, apache 2, mysql 5.7, and glpi 10
 Clone o repositório do projeto
 
 ```
-git clone git@github.com:JoshuaWebDev/glpi10-docker-image.git
+git clone git@github.com:JoshuaWebDev/myglpi.git
 ```
 
 Acesse o diretório do projeto
 
 ```
-cd glpi10-docker-image
+cd myglpi
 ```
 
 Copie o arquivo **.env.example** renomeando-o para **.env** e altere o valor das variáveis de acordo com as credenciais da sua base de dados (usuário, senha, porta, etc).

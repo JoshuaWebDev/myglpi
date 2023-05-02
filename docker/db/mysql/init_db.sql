@@ -1,1 +1,1 @@
--- CREATE TABLE IF EXISTS `glpi`;
+-- CREATE TABLE IF NOT EXISTS `glpi`;
